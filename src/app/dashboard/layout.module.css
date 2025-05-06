@@ -1,0 +1,37 @@
+.header {
+    background-color: #00ADB5;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header_logo {
+    width: 3.8vw;
+    height: 3.5vw;
+    margin: 0 1vw;
+    margin-bottom: 0.4vw;
+}
+
+.header_logout {
+    cursor: pointer;
+    width: 2.65vw;
+    height: 2.65vw;
+    position: absolute;
+    right: 1.5vw;
+    transition: width 0.3s ease;
+
+}
+
+.header_logout:hover {
+    width: 2.75vw;
+    height: 2.75vw;
+}
+
+
+.header_btn {
+    margin: 0 1vw;
+    font-size: 2.5rem;
+    cursor: pointer;
+}

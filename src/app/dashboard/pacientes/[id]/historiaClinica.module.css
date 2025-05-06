@@ -1,0 +1,304 @@
+.historia {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    padding: 5rem;
+}
+
+.printMode {
+    display: block !important;
+    height: auto !important;
+}
+
+.historia_Info {
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    border-radius: 1rem 0 0 1rem;
+    color: black;
+}
+
+.historia_InfoGeneral {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.historia_InfoGeneralText {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
+.historia_ImgPaciente {
+    width: 7vw;
+    height: 7vw;
+}
+
+.historia_name {
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+.historia_birthday {
+    color: #757575;
+    font-size: 1rem;
+}
+
+.historia_table {
+    width: auto;
+    height: 60%;
+    margin: 2rem;
+    border: solid .1rem #323232a1;
+    color: #323232;
+    border-radius: 1rem;
+}
+
+.historia_tableTitle{
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12.5%;
+    font-weight: bold;
+}
+
+.historia_row {
+    height: 12.5%;
+    display: flex;
+    align-items: center;
+    border-top: .1rem solid #323232a1;
+    width: 100%;
+    position: relative;
+    color: #323232;
+}
+
+.historia_rowText {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+}
+
+.historia_rowUnit {
+    position: absolute;
+    right: 1rem;
+    color: #323232ab;  
+}
+
+.historia_Details {
+    width: 70%;
+    height: 100%;
+    background-color: #00ADB5;
+    border-radius: 0 1rem 1rem 0;
+    position: relative;
+}
+
+.historia_DetailsDashboard {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    border: .1rem solid #323232;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: #323232;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.historia_DetailsDashboardTitle {
+    font-size: 4rem;
+    opacity: 85%;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.historia_Antecedentes {
+    background-color: #D9D9D9;
+    width: 80%;
+    height: 20vh;
+}
+
+.historia_AntecedentesTitle {
+    color: black;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: bold;
+    padding: .5rem;
+    border-bottom: .15rem solid white;
+}
+
+.historia_AntecedentesText {
+    opacity: 70%;
+    margin: .5rem;
+}
+
+.historia_download {
+    width: 4.5rem;
+    height: 4.5rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    
+}
+
+.historia_download img {
+    width: 100%;
+    height: 100%;
+}
+
+.historia_download:hover {
+    width: 5rem;
+    height: 5rem;
+}
+
+.citas_table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #f4f4f4;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 1.1rem;
+    font-size: .75rem;
+  }
+  
+.citas_title {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.citas_table td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+.citas_button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.citas_button:hover {
+    background-color: #0097a7;
+}
+
+.citas_buttonContainer {
+    width: 80%  ;
+}
+
+.pageBreak {
+    display: block;
+    break-before: page;
+    page-break-before: always; /* Compatibilidad */
+    break-after: page;
+    page-break-after: always;  /* Compatibilidad */
+}
+
+@media print {
+    /* 1. Contenedor general en modo print */
+    .historia {
+      display: block !important;
+      height: auto !important;
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  
+    /* 2. Secciones sin estilos visuales innecesarios */
+    .historia_Info,
+    .historia_Details {
+      height: auto !important;
+      border-radius: 0 !important;
+      width: 100% !important;
+    }
+  
+    /* 3. Ajuste de dashboard (quita position absolute) */
+    .historia_DetailsDashboard {
+      position: static !important;
+      transform: none !important;
+      width: 100% !important;
+      margin: 2rem auto !important;
+      height: auto !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  
+    /* 4. Forzar salto de página */
+    .pageBreak {
+      display: block !important;
+      page-break-after: always !important;
+      break-after: page !important;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: transparent !important;
+    }
+  
+    /* 5. Ajustar tipografía y espacio */
+    .historia_name {
+      font-size: 1.2rem !important;
+    }
+  
+    .historia_birthday,
+    .historia_rowText,
+    .historia_rowUnit,
+    .historia_tableTitle,
+    .historia_AntecedentesTitle,
+    .historia_AntecedentesText,
+    .citas_table td {
+      font-size: 0.9rem !important;
+    }
+  
+    .historia_DetailsDashboardTitle {
+      font-size: 2rem !important;
+      margin: 1rem 0 !important;
+    }
+  
+    /* 6. Ocultar botones e imágenes decorativas */
+    .historia_download,
+    .citas_buttonContainer,
+    .historia_ImgPaciente {
+      display: none !important;
+    }
+  
+    /* 7. Ajustar tabla de citas */
+    .citas_table {
+      font-size: 0.8rem !important;
+      width: 100% !important;
+      margin: 1rem 0 !important;
+    }
+  
+    /* 8. Corregir espaciado general */
+    .historia_InfoGeneral,
+    .historia_Antecedentes {
+      padding: 1rem !important;
+    }
+  }
+
+  .exportando {
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+  }

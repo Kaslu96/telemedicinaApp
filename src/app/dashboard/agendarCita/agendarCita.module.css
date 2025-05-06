@@ -1,0 +1,200 @@
+.container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerSection {
+    width: 90%;
+    height: 90%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #00adb5;
+    position: relative;
+}
+
+.seccionIzquierda {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 70%;
+    height: 80%;
+}
+  
+  .seccionDerecha {
+    width: 30%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    color: white;
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+}
+
+.tituloOscuro {
+    color: black;
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+  
+.label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.input {
+    width: 20vw;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f8f8f8;
+}
+  
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 0 5rem;
+}
+  
+.slider button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+}
+
+.imagen {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+  
+.infoEspecialista {
+    background-color: #e6e6e640;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #333;
+    width: 100%;
+    border-top: .1rem solid black;
+    border-bottom: .1rem solid black;
+    padding: .4rem 0;
+}
+
+.infoEspecialista_title {
+    border-bottom: .1rem solid black;
+    font-size: 2rem;
+    padding-bottom: .4rem;
+}
+  
+.infoEspecialista b {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+  
+.boton {
+    background-color: #00b6b6;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 80%;
+    font-weight: bold;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+  
+.boton:hover {
+    background-color: #009c9c;
+}
+
+.boton_container {
+    position: absolute;
+    width: 100%;
+    bottom: 1rem;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveAlert{
+    width: 20rem;
+    height: 20rem;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 1rem;
+    color:black;
+}
+
+.calendarioLogo{
+    width: 5rem;
+    height: 5rem;
+}
+
+.blurContainer{
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1rem;
+    background-color: #d1d5db94;
+}
+
+.saveTitle{
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.saveButton{
+    background-color: #12A1AA;
+    cursor: pointer;
+    border: none;
+    width: 4.5rem;
+    height: auto;
+    font-size: 3rem;
+}
+
+.ocultar{
+    display: none;
+}

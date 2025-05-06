@@ -1,0 +1,99 @@
+.pacientes {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.paciente_search {
+    position: relative;
+    background-color: white;
+    border: none;
+    margin-top: 4vh;
+    width: 30vw;
+    height: 5vh;
+    border-radius: 5rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.paciente_search_input {
+   background-color: white;
+   border: none;
+   outline: none;
+   color: #1E1E1E;
+   width: 92%;
+}
+
+.paciente_search_input::placeholder {
+    color: #1E1E1E;
+    opacity: 60%;
+}
+
+.paciente_search_x {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    position: absolute;
+    right: 1rem;
+}
+
+.paciente_dashboard{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: white;
+    opacity: 85%;
+    margin-top: 4vh;
+    width: 80%;
+    height: 80%;
+    color: #1E1E1E;
+    overflow-y: scroll;
+}
+
+.paciente_dashboard_label{
+    cursor: pointer;
+    display: flex;
+    margin: 1rem 0;
+    width: 50%;
+    align-items: center;
+}
+
+.paciente_dashboard_labelText{
+    margin-left: 1rem;
+}
+
+.loader2 {
+    position: absolute;
+    top: 50%;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #000;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader2::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border-bottom: 4px solid #00adb5;
+    border-left: 4px solid transparent;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+} 

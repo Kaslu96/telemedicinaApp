@@ -1,0 +1,9 @@
+[
+    {
+      "id": 1,
+      "fechaHora": "2025-03-10T10:00:00",
+      "medico": "Dr. Juan Pérez",
+      "especialidad": "Cardiología",
+      "estado": "Confirmada"
+    }
+  ]

@@ -1,0 +1,68 @@
+.encuesta {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.encuestaDashboard{
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.encuesta_agregar {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.encuestaTable {
+    background-color: #323232;
+    border-radius: .4rem;
+    font-weight: lighter;
+    font-size: .8rem;
+    width: 90%;
+    height: 50vh;
+    margin-top: 5vh;
+}
+
+.encuesta_rowTitle {
+    padding: 0 .5rem;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.117);
+}
+
+.border_right {
+    border-right: solid .1rem rgba(255, 255, 255, 0.456);
+}
+
+.border {
+    border-right: solid .1rem rgba(255, 255, 255, 0.456);
+    border-top: solid .1rem rgba(255, 255, 255, 0.456);
+}
+
+.border_top {
+    border-top: solid .1rem rgba(255, 255, 255, 0.456);
+}
+
+.encuesta_row {
+    padding: 0 .5rem;
+}
+
+.encuesta_row_link {
+    color: #5555BD;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+
+.ocultar{
+    display: none;
+}
