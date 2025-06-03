@@ -1,5 +1,7 @@
 export type Notification = {
-    id: number;
-    title: string;
-    message: string;
+    idNotificacion: number;
+    idUsuario: string;
+    mensaje: string;
+    fecha: string;
+    idUsuarioNavigation: string
 };

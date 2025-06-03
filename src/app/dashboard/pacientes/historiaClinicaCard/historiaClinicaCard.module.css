@@ -1,0 +1,22 @@
+.historia_card {
+    display: flex;
+    background-color: white;
+    margin-bottom: .2rem;
+    padding: .2rem;
+    align-items: center;
+    cursor: pointer;
+    border: .1rem solid transparent;
+}
+
+.historia_card:hover {
+    border: .1rem solid rgba(0, 0, 0, 0.5);
+}
+
+.historia_cardImg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.historia_cardText{
+    color: black;
+}

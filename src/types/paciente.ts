@@ -1,29 +1,25 @@
-export interface SignoVital {
-    value: number | string;
-    unit: string;
-}
-  
 export interface Vitals {
-    altura: SignoVital;
-    peso: SignoVital;
-    masaCorporal: SignoVital;
-    temperatura: SignoVital;
-    frecuenciaRespiratoria: SignoVital;
-    presionArterial: SignoVital;
-    frecuenciaCardiaca: SignoVital;
-}
-
-export interface HistoriaClinica {
-    antecedentes: string;
+    idSignos: number;
+    altura: number;
+    peso: number;
+    masaCorporal: number;
+    temperatura: number;
+    frecuenciaRespiratoria: number;
+    presionArterial: number;
+    frecuenciaCardiaca: number;
+    paciente: number;
+    idPacienteNavigation: string;
 }
 
 export interface Paciente {
-    id: number;
-    name: string;
-    birthdate: string; // formato YYYY-MM-DD
-    age: number;
-    image: string;
-    vitals: Vitals;
-    historiaClinica: HistoriaClinica;
+    idUsuario: number;
+    cedula: number;
+    nombre: string;
+    apellido: string;
+    contrasena: string;
+    telefono: string;
+    correo	: string;
+    fechaNacimiento: string;
+    direccion: string;
 }
   

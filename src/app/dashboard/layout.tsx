@@ -18,6 +18,7 @@ export default function Layout({
 }) {
   const router = useRouter();
   const [rol, setRol] = useState<string | null>(null);
+  
 
   useEffect(() => {
     const storedRol = localStorage.getItem("rol");
@@ -46,21 +47,27 @@ export default function Layout({
           Inicio
         </h2>
 
-        {(rol === "admin" || rol === "employee") && (
+        {(rol === "Administrador" || rol === "Terapeuta") && (
           <h2 className={styles.header_btn} onClick={() => router.push("/dashboard/pacientes")}>
             Pacientes
           </h2>
         )}
 
-        {rol === "patient" && (
+        {rol === "Paciente" && (
           <h2 className={styles.header_btn} onClick={() => router.push("/dashboard/pacientes")}>
             Mi historial
           </h2>
         )}
 
-        {(rol === "admin" || rol === "patient") && (
+        {(rol === "Administrador" || rol === "Paciente") && (
           <h2 className={styles.header_btn} onClick={() => router.push("/dashboard/encuestas")}>
             Encuestas
+          </h2>
+        )}
+
+        {(rol === "Administrador") && (
+          <h2 className={styles.header_btn} onClick={() => router.push("/dashboard/crearUsuario")}>
+            Crear Usuario
           </h2>
         )}
 

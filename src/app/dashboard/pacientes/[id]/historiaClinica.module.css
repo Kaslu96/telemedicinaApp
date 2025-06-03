@@ -12,10 +12,25 @@
 
 .historia_Info {
     width: 30%;
-    height: 100%;
+    height: 75vh;
     background-color: white;
     border-radius: 1rem 0 0 1rem;
     color: black;
+}
+
+.historia_ImgDevolver {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+}
+
+.historia_ImgDevolver:hover {
+    width: 2.1rem;
+    height: 2.1rem;
+    transition: width 0.1s ease;
 }
 
 .historia_InfoGeneral {
@@ -24,6 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .historia_InfoGeneralText {
@@ -90,7 +106,7 @@
 
 .historia_Details {
     width: 70%;
-    height: 100%;
+    height: 75vh;
     background-color: #00ADB5;
     border-radius: 0 1rem 1rem 0;
     position: relative;
@@ -98,7 +114,7 @@
 
 .historia_DetailsDashboard {
     width: 80%;
-    height: 80%;
+    height: 65vh;
     position: absolute;
     border: .1rem solid #323232;
     top: 50%;
@@ -108,34 +124,64 @@
     color: #323232;
     display: flex;
     flex-flow: column nowrap;
+    gap: 1.5rem;
     align-items: center;
+    overflow: scroll;
 }
 
 .historia_DetailsDashboardTitle {
     font-size: 4rem;
     opacity: 85%;
     font-weight: bold;
-    margin: 1rem 0;
 }
 
 .historia_Antecedentes {
     background-color: #D9D9D9;
     width: 80%;
-    height: 20vh;
+    min-height: 20vh;
+    /* margin-top: 1.5rem; */
+    border-radius: .5rem;
+}
+
+.historia_AntecedentesScroll {
+    overflow-y: hidden;
+     padding: 1rem 0 1rem 0;
+}
+
+.historia_AntecedentesContainer {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .historia_AntecedentesTitle {
     color: black;
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-style: italic;
     font-weight: bold;
     padding: .5rem;
     border-bottom: .15rem solid white;
+    height: 5vh;
 }
 
 .historia_AntecedentesText {
     opacity: 70%;
-    margin: .5rem;
+    height: 13vh;
+    margin: 1vh 0 1vh 0;
+    padding: 0 .5rem 0 .5rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.historia_AntecedentesSubtitle{
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0 0  0 1rem;
+}
+
+.historia_AntecedentesTxt{
+    font-size: .75rem;
+    margin: 0 0 .5rem 1rem;
 }
 
 .historia_download {
@@ -158,6 +204,7 @@
 .historia_download:hover {
     width: 5rem;
     height: 5rem;
+    transition: width 0.1s ease;
 }
 
 .citas_table {
@@ -166,8 +213,8 @@
     background-color: #f4f4f4;
     border-radius: 1rem;
     overflow: hidden;
-    margin-top: 1.1rem;
     font-size: .75rem;
+    min-height: 25vh;
   }
   
 .citas_title {
@@ -180,7 +227,7 @@
 }
 
 .citas_table td {
-    padding: 8px;
+    padding: 0.6rem;
     border-bottom: 1px solid #ccc;
 }
 
@@ -196,11 +243,13 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: 1rem;
     transition: background-color 0.3s;
 }
 
 .citas_button:hover {
     background-color: #0097a7;
+    transition: background-color 0.1s ease;
 }
 
 .citas_buttonContainer {
@@ -302,3 +351,36 @@
     height: auto !important;
     padding: 0 !important;
   }
+
+.colFecha,
+.colDescripcion {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 20px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.colDescripcion span {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.historia_agregarBtn {
+  padding: 6px 12px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.historia_agregarBtn:hover {
+  background-color: #0097a7;
+}

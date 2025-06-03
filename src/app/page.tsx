@@ -9,14 +9,10 @@ export default function Home() {
 
   useEffect(() => {
     if (!isAuthenticated()) {
-      setTimeout(function(){
-        router.push("/login");
-      }, 2000);
+      router.push("/login");
     } else {
-      setLoading(false);
-      setTimeout(function(){
-        router.push("/dashboard");
-      }, 2000);
+      setLoading(false); 
+      router.push("/dashboard");
     }
   }, [router]);
 

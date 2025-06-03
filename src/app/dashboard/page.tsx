@@ -4,8 +4,8 @@ import {Road_Rage} from 'next/font/google'
 import {Poppins} from 'next/font/google'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
-import notificactionsData from '@/data/notifications.json'
 import { Notification } from '@/types/notification';
+import { getNotificaciones, getNotificacionesById } from '@/Utils/Services'
 
 const poppins = Poppins({
   weight: '400',
@@ -24,8 +24,38 @@ export default function DashboardPage(){
     const [notificacionesOpen, setNotificacionesOpen] = useState<boolean>(false);
 
     useEffect(() => {
-        setTimeout(() => setNotificaciones(notificactionsData), 500);
-    }, []);
+        const cargarNotificaciones = async () => {
+            const notificacionesData = await notificacionesService();
+            if(localStorage.getItem("rol") === "Paciente") {
+                setNotificaciones([notificacionesData]);
+            } else {
+                setNotificaciones(notificacionesData);
+            }
+            
+        };
+
+        if (notificacionesOpen) {
+            cargarNotificaciones();
+        }
+        }, [notificacionesOpen]);
+
+        const notificacionesService = async () => {
+            try {
+                if(localStorage.getItem("rol") === "Paciente") {
+                    const response = await getNotificacionesById(localStorage.getItem("idUser"));
+                    return response
+                } else {
+                    const response = await getNotificaciones();
+                    return response
+                }
+                
+            } catch (error) {
+                console.log("Error al obtener notificaciones: ", error)
+                return [];
+            }
+               
+        };
+
 
     return (
         <section className={styles.dash}>
@@ -62,7 +92,7 @@ export default function DashboardPage(){
                     
                     <section className={styles.notification}>
                         {notificaciones.map((notificacion) => (
-                            <div key={notificacion.id} className={styles.notification_div}>
+                            <div key={notificacion.idNotificacion} className={styles.notification_div}>
                                 <Image
                                     src="/Mensaje.png"
                                     width={100}
@@ -71,8 +101,8 @@ export default function DashboardPage(){
                                     className={styles.notification_divImg}
                                 />
                                 <div className={styles.notification_divInfo}>
-                                    <p  className={styles.notification_divTitle}>{notificacion.title}</p>
-                                    <p  className={styles.notification_divMesagge}>{notificacion.message}</p>
+                                    <p  className={styles.notification_divTitle}>{notificacion.mensaje}</p>
+                                    <p  className={styles.notification_divMesagge}>{notificacion.fecha}</p>
                                 </div>
                             </div>
                         ))}

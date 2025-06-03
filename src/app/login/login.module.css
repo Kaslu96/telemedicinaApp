@@ -109,3 +109,7 @@
     height: 15%;
 }
 
+.errorMessage {
+    margin-bottom: 1rem;
+    color: #000000;
+}

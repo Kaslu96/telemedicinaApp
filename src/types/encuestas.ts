@@ -1,6 +1,9 @@
 export interface Encuesta {
+  id: number
   nombre: string;
-  fecha: string;
-  respuestas: number;
-  estado: string
+  url: string;
+  fechaCreacion	: string;
+  activo: boolean;
+  id_Usuario: number;
+  idUsuarioNavigation: string
 }

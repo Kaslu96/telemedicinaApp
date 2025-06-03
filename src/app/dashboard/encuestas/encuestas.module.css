@@ -57,12 +57,12 @@
     padding: 0 .5rem;
 }
 
-.encuesta_row_link {
-    color: #5555BD;
-    text-decoration-line: underline;
-    cursor: pointer;
-}
-
 .ocultar{
     display: none;
+}
+
+.link{
+    color: #5555BD;
+    text-decoration-line: underline;
+    cursor: pointer; 
 }

@@ -1,11 +1,10 @@
 'use client';
 import { useEffect, useState } from "react";
-import surveysData from "@/data/surveys.json"
 import { Encuesta } from "@/types/encuestas";
 import styles from "./encuestas.module.css"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
+import { getSurveys } from "@/Utils/Services"
 const ICONOS = {
     nombre: '📄',
     fecha: '📅',
@@ -22,7 +21,11 @@ export default function SurveyTable() {
   const router = useRouter();
 
   useEffect(() => {
-    setTimeout(() => setEncuestas(surveysData), 500);
+    const cargarEncuestas = async () => {
+      const encuestasData = await getSurveys();
+      setEncuestas(encuestasData);
+    }
+    cargarEncuestas();
   }, []);
 
   return (
@@ -33,7 +36,7 @@ export default function SurveyTable() {
                 width={100}
                 height={100}
                 alt="Telemedicina imagen"
-                className={localStorage.getItem("rol") === "admin" ? styles.encuesta_agregar : styles.ocultar}
+                className={localStorage.getItem("rol") === "Administrador" ? styles.encuesta_agregar : styles.ocultar}
                 onClick={() => {router.push("/dashboard/crearEncuesta")}}
             />
             <table className={styles.encuestaTable}>
@@ -41,26 +44,20 @@ export default function SurveyTable() {
                 <tr>
                 <th className={`${styles.encuesta_rowTitle} && ${styles.border_right}`}>{ICONOS.nombre} Nombre</th>
                 <th className={`${styles.encuesta_rowTitle} && ${styles.border_right}`}>{ICONOS.fecha} Fecha</th>
-                <th className={`${styles.encuesta_rowTitle} && ${styles.border_right}`}>{ICONOS.respuestas} Respuestas</th>
                 <th className={`${styles.encuesta_rowTitle} && ${styles.border_right}`}>{ICONOS.estado} Estado</th>
-                { localStorage.getItem("rol") === "admin" &&
-                  (<th className={styles.encuesta_rowTitle}>{ICONOS.acciones} Acciones</th>)
-                }
                 </tr>
             </thead>
             <tbody>
                 {encuestas.map((encuesta, index) => (
                 <tr key={index} >
-                    <td className={`${styles.encuesta_row} && ${styles.border}`}>{encuesta.nombre}</td>
-                    <td className={`${styles.encuesta_row} && ${styles.border}`}>{encuesta.fecha}</td>
-                    <td className={`${styles.encuesta_row} && ${styles.border}`}>{encuesta.respuestas}</td>
-                    { encuesta.estado === "Activo" ? 
-                        <td className={`${styles.encuesta_row} && ${styles.border}`}>{ICONOS.activo} {encuesta.estado}</td>
-                        : <td className={`${styles.encuesta_row} && ${styles.border}`}>{ICONOS.inactivo} {encuesta.estado}</td>
+                    <td className={`${styles.encuesta_row} && ${styles.border} && ${styles.link}`}
+                     onClick={() => {window.open(encuesta.url, "_blank");}}>{encuesta.nombre}
+                    </td>
+                    <td className={`${styles.encuesta_row} && ${styles.border}`}>{encuesta.fechaCreacion}</td>
+                    { encuesta.activo === true ? 
+                        <td className={`${styles.encuesta_row} && ${styles.border}`}>{ICONOS.activo} Activa</td>
+                        : <td className={`${styles.encuesta_row} && ${styles.border}`}>{ICONOS.inactivo} Desactivada</td>
                         
-                    }
-                    { localStorage.getItem("rol") === "admin" &&
-                      <td className={`${styles.encuesta_row} && ${styles.border_top} && ${styles.encuesta_row_link}`}>{ICONOS.editar}Editar</td>
                     }
                 </tr>
                 ))}
